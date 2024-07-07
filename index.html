@@ -1,1 +1,323 @@
-hello world!
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CogVLM2-Video </title>
+
+    <link rel="icon" href="./static/images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/leaderboard.css">
+    <link rel="stylesheet" href="./static/css/video-player.css">
+
+
+    <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/explorer-index.js"></script>
+    <script src="./static/js/question_card.js"></script>
+
+
+</head>
+<body>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+                <a class="navbar-link">
+                    More Research
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://github.com/THUDM/LVBench">
+                        <b>LVBench</b>
+                    </a>
+                    <a class="navbar-item" href="https://github.com/THUDM/CogVLM2">
+                        <b>CogVLM2</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title is-bold">
+                        <img src="static/images/logo.png" style="width:1.6em;vertical-align: middle" alt="Logo"/>
+                        <span class="video-mme" style="vertical-align: middle">CogVLM2-Video</span>
+                    </h1>
+                    <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px;">
+                        A Temporally-Aware Video Understanding Model
+                    </h2>
+
+                    <div class="is-size-5 publication-authors" , style="width: 80%; margin: 20px auto;" ,>
+
+                        <span class="author-block" , style="font-size:24px"><a href="https://github.com/THUDM/CogVLM2">CogVLM Team</a></span>
+
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/THUDM/CogVLM2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                            <!-- Dataset Link. -->
+                            <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">📊</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+                            <span class="link-block">
+                <a href="https://huggingface.co/THUDM/cogvlm2-video-llama3-chat"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Hugging Face</span>
+                </a>
+              </span>
+
+                            <span class="link-block">
+                <a href="https://modelscope.cn/models/ZhipuAI/cogvlm2-video-llama3-chat-19B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>ModelScope</span>
+                </a>
+              </span>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Introduction</h2>
+                <div class="content has-text-justified">
+                    With the development of large language models and multimodal alignment techniques, video
+                    understanding models have also made significant progress in general open domains. However, most
+                    current video understanding models use frame averaging and video token compression methods,
+                    resulting in the loss of temporal information and the inability to accurately answer time-related
+                    questions. On the other hand, some models focused on temporal question-answering datasets are overly
+                    restricted to specific formats and applicable domains, causing the models to lose more general
+                    question-answering capabilities. In this paper, we propose an automated temporal grounding data
+                    construction method based on visual models, generating 30k time-related video question-answering
+                    data. Then, based on this new dataset and existing open-domain question-answering data, we introduce
+                    multi-frame video images and timestamps as encoder inputs to train a new video understanding
+                    model—CogVLM2-Video. CogVLM2-Video not only achieves state-of-the-art performance on public video
+                    understanding benchmarks but also excels in video captioning and temporal grounding, providing a
+                    powerful tool for subsequent tasks such as video generation and video summarization.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Model Architecture</h2>
+                <div class="content has-text-justified">
+                    Currently, the mainstream approach in video understanding involves using image encoders to extract
+                    frames from videos, encoding them, and then designing encoding compression modules (e.g., temporal
+                    pooling or Q-Former modules) to compress the video encoding information before inputting it into a
+                    large language model (LLM) for joint understanding with textual inputs. Although this method
+                    effectively compresses video information, it causes the model to lose temporal awareness, preventing
+                    it from accurately associating video frames with precise timestamps. Consequently, the model lacks
+                    the capability for temporal localization, timestamp detection, and summarizing key moments.
+                    Additionally, video understanding models trained with existing temporal grounding annotated data are
+                    limited by the data's scope and the fixed format of question-answering, resulting in a lack of
+                    open-domain question-answering and processing capabilities. To address these issues, we propose
+                    CogVLM2-Video, an extended video model based on the CogVLM2 image understanding model. This model
+                    not only
+                    achieves state-of-the-art performance in open-domain question-answering but also perceives timestamp
+                    information within videos, enabling temporal localization and related question-answering.
+                    Specifically, we extract frames from the input video segments and annotate them with timestamp
+                    information, allowing the subsequent language model to accurately know the exact time each frame
+                    corresponds to in the original video. The figure below shows the overall
+                    architecture of our model:
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="content has-text-centered">
+                <div class="container-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                    <div id="container"></div>
+                    <div id="image-container" style="margin-right: 20px;">
+                        <img src="static/images/model.png" alt="data-composition"
+                             style="max-width: 50%; display: inline-block;"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container" style="margin-bottom: 5vh;">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Temporal Grounding Q&A Datasets</h2>
+                <div class="content has-text-justified">
+                    Additionally, the training of video understanding models using existing temporal grounding
+                    annotation data is limited by the scope of the data and the fixed format of question and answer
+                    pairs, lacking the capability for open-domain question answering and processing. Compared to the
+                    plain text data used to train LLMs and the image understanding data used to train VLMs, the
+                    annotation cost for high-quality video question answering and temporal grounding data is extremely
+                    high. Manual annotation alone cannot meet the demands of large-scale training. To prepare temporal
+                    grounding data suitable for large-scale training, we developed a fully automated video question
+                    answering data generation process. We leverage the latest image understanding models to extract
+                    frame-level understanding from video data, and then use large language models for data filtering and
+                    generation. Through this automated data processing workflow and large-scale training, CogVLM2-Video
+                    not only excels on public benchmarks but also possesses the temporal question answering capability
+                    that most previous video models lacked. The figure below shows the construction process, through
+                    which we ultimately generated 30,000 Temporal Grounding Question and Answer (TQA) data points.:
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="content has-text-centered">
+                <div class="container-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                    <div></div>
+                    <div style="margin-right: 20px;">
+                        <img src="static/images/data.png" alt="data-composition"
+                             style="max-width: 60%; display: inline-block;"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container" style="margin-bottom: 5vh;">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Evaluation</h2>
+                <div class="content has-text-justified">
+                    TODO
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="content has-text-centered">
+                <div class="container-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                    <div></div>
+                    <div style="margin-right: 20px;">
+                        <!--                        <img src="static/images/evaluation.png" alt="data-composition"-->
+                        <!--                             style="max-width: 60%; display: inline-block;"/>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="columns is-centered">
+        <div class="column">
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+                <p style="text-align: center;">
+                    This website is adapted from <a href="https://lvbench.github.io">LVBench</a>, licensed under a
+                    <a rel="license"
+                       href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</footer>
+
+</body>
+</html>
+
